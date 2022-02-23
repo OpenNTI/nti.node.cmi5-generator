@@ -1,24 +1,24 @@
 #!/usr/bin/env node
 "use strict";
-const {
+import {
 	writeFileSync,
 	mkdirSync,
 	readdirSync,
 	rmSync,
-	promises: { readFile },
-} = require("fs");
-const { execSync } = require("child_process");
-const path = require("path");
+	readFileSync,
+} from "fs";
+import { execSync } from "child_process";
+import path from "path";
 
-const args = require("command-line-args");
-const Mustache = require("mustache");
-const { parseFile } = require("@fast-csv/parse");
-const { config } = require("process");
+import args from "command-line-args";
+import usage from "command-line-usage";
+import Mustache from "mustache";
+import { parseFile } from "@fast-csv/parse";
 
 const safeFileName = (f) => f.toLowerCase().replaceAll(" ", "-");
 
 async function compile(config) {
-	const template = await readFile(config.template, "utf-8");
+	const template = readFileSync(config.template, "utf-8");
 	let count = 0;
 
 	await new Promise((fulfill, reject) => {
@@ -88,7 +88,7 @@ const configs = args(options);
 
 if (configs.help) {
 	console.log(
-		require("command-line-usage")([
+		usage([
 			{
 				header: "CMI5 Generator",
 				content:
