@@ -1,12 +1,13 @@
 {
-  "name": "cmi5-generator",
+  "name": "@nti/cmi5-generator",
   "version": "0.0.0",
   "description": "Generate CMI5 Packages",
-  "main": "index.js",
-  "scripts": {
-    "compile": "node compile.js"
+  "type": "module",
+  "bin": {
+    "compile": "compile.js"
   },
-  "author": "",
+  "main": "compile.js",
+  "author": "NextThought",
   "license": "UNLICENSED",
   "dependencies": {
     "@fast-csv/parse": "^4.3.6",
