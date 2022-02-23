@@ -1,0 +1,17 @@
+{
+  "name": "cmi5-generator",
+  "version": "0.0.0",
+  "description": "Generate CMI5 Packages",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node compile.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "command-line-args": "^5.2.1",
+    "command-line-usage": "^6.1.1",
+    "mustache": "^4.2.0"
+  }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<courseStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd">
+	<course id="{{{ID}}}">
+		<title>
+			<langstring lang="en-US">{{{Title}}}</langstring>
+		</title>
+		<description>
+			<langstring lang="en-US">
+      	{{{Description}}}
+	  </langstring>
+		</description>
+	</course>
+	<au id="{{{ID}}}">
+		<title>
+			<langstring lang="en-US">{{{Title}}}</langstring>
+		</title>
+		<description>
+			<langstring lang="en-US">
+		  {{{Description}}}
+	  </langstring>
+		</description>
+		<url>https://xrportal.nextthought.io/launch/cmi5</url>
+		<launchParameters>
+    {
+        "Platforms": {
+	    	"Android": {
+	        	"Action": "Launch",
+				"Bundle": "{{{Bundle}}}",
+				"Extras": {
+		    		"ScenarioId": "{{{ScenarioId}}}"
+				},
+				"CMI5Supported": true
+	    	}
+		}
+    }
+
+	</launchParameters>
+	</au>
+</courseStructure>
