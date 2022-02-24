@@ -38,18 +38,18 @@ async function compile(config) {
 					path.join(config.output, packageName, "cmi5.xml"),
 					Mustache.render(template, row)
 				);
+
+				execSync(`zip -r ${packageName}.zip ${packageName}`, {
+					cwd: config.output,
+				});
+
+				rmSync(path.join(config.output, packageName), {
+					recursive: true,
+				});
+
+				console.log("Generated %s", packageName);
 			});
 	});
-
-	const packages = readdirSync(config.output);
-
-	for (let packageName of packages) {
-		console.log("ZIPPING: ", packageName);
-		execSync(`zip -r ${packageName}.zip ${packageName}`, {
-			cwd: config.output,
-		});
-		rmSync(path.join(config.output, packageName), { recursive: true });
-	}
 }
 
 const options = [
